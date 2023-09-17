@@ -15,7 +15,7 @@ const config = {
 };
 
 const projectData = {
-  name: "Morgan",
+  name: "FINAL",
   symbol: "MF",
   image: "https://imgur.com/zPn4SYu.jpg",
 };
@@ -33,16 +33,16 @@ async function handleFormSubmit(event) {
   // Call the mintNft function
   try {
     await mintNft();
+    showModal(); // Show the modal on successful minting
   } catch (error) {
     console.error("Error minting NFT:", error);
   }
 }
 
 // Add an event listener to the form to trigger the form submission handling
-
 document
   .getElementById("executeForm")
-  .addEventListener("submit", handleFormSubmit); //comment docuemnt --> this line out when testing this file alone
+  .addEventListener("submit", handleFormSubmit);
 
 async function mintNft() {
   const createProjectResponse = await axios.post(
